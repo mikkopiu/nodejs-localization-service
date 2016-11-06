@@ -8,8 +8,13 @@
  * the database client will only be created once.
  */
 
+const bluebird = require('bluebird');
 const redis = require('redis');
 const debug = require('debug')('server:redis');
+
+bluebird.promisifyAll(redis.RedisClient.prototype);
+bluebird.promisifyAll(redis.Multi.prototype);
+
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
 const REDIS_HOST = process.env.REDIS_HOST || '127.0.0.1';
 let client = null;
