@@ -1,0 +1,12 @@
+app:
+  build: .
+  ports:
+    - "9000:8080"
+  environment:
+    - NODE_ENV=production
+    - PORT=8080
+  links:
+    - "db:db"
+
+db:
+  image: redis

@@ -1,0 +1,169 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {},
+  "rules": {
+    "no-bitwise": 2,
+    "curly": [
+      "error",
+      "all"
+    ],
+    "eqeqeq": 2,
+    "guard-for-in": 2,
+    "wrap-iife": [
+      "error",
+      "inside"
+    ],
+    "no-use-before-define": [
+      "error",
+      "nofunc"
+    ],
+    "new-cap": [
+      "error",
+      {
+        "properties": false
+      }
+    ],
+    "no-caller": 2,
+    "no-empty": 2,
+    "no-new": 0,
+    "no-plusplus": 0,
+    "no-undef": 2,
+    "no-var": 2,
+    "strict": 0,
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-cond-assign": 0,
+    "no-debugger": 0,
+    "no-eq-null": 0,
+    "no-eval": 0,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "block-scoped-var": 0,
+    "no-iterator": 0,
+    "linebreak-style": 0,
+    "comma-style": [
+      "error",
+      "last"
+    ],
+    "no-loop-func": 2,
+    "no-multi-str": 0,
+    "no-proto": 0,
+    "no-script-url": 0,
+    "no-shadow": 2,
+    "dot-notation": [
+      "error",
+      {
+        "allowKeywords": true,
+        "allowPattern": "^[a-z]+(_[a-z]+)+$"
+      }
+    ],
+    "no-new-func": 0,
+    "no-new-wrappers": 0,
+    "no-invalid-this": 0,
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "brace-style": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "space-unary-ops": [
+      "error",
+      {
+        "words": false,
+        "nonwords": false
+      }
+    ],
+    "semi-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-spaced-func": 2,
+    "space-before-function-paren": [
+      "error",
+      {"anonymous": "always", "named": "never"}
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "yoda": [
+      "error",
+      "never"
+    ],
+    "valid-jsdoc": [
+      1,
+      {
+        "requireReturn": false,
+        "requireReturnType": false,
+        "requireParamDescription": false,
+        "requireReturnDescription": false
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 121,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true
+      }
+    ],
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+    "eol-last": 2,
+    "operator-linebreak": [
+      "error",
+      "after"
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "overrides": {
+          "else": {
+            "before": true
+          },
+          "while": {
+            "before": true
+          },
+          "catch": {
+            "before": true
+          }
+        }
+      }
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "consistent-this": [
+      "error",
+      "_self"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      "avoid-escape"
+    ],
+    "no-console": 0
+  }
+}
