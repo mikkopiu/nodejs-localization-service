@@ -7,7 +7,7 @@ const debug = require('debug')('server:localizations');
 
 /* GET localizations listing. */
 router.get('/', (req, res, next) => {
-    db.hgetall('localizations')
+    db.hgetallAsync('localization')
         .then(data => {
             res.json(data);
         })
@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 
 router.post('/create', (req, res, next) => {
     const localization = req.body;
-    db.hmset(localization.id, localization)
+    db.hmsetAsync('localization', localization)
         .then(data => {
             res.json(data);
         })

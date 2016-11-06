@@ -5,6 +5,8 @@ app:
   environment:
     - NODE_ENV=production
     - PORT=8080
+    - REDIS_HOST=db
+    - REDIS_PORT=6379
   links:
     - "db:db"
 
