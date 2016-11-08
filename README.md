@@ -1,2 +1,2 @@
-# nodejs-localization-service
+# nodejs-localization-service [![Build Status](https://travis-ci.com/mikkopiu/nodejs-localization-service.svg?token=SghvLEifzSWuDsPrqyBk&branch=f-sequelize)](https://travis-ci.com/mikkopiu/nodejs-localization-service)
 Simple localization microservice using Node.js

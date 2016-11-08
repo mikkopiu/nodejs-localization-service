@@ -11,7 +11,6 @@ RUN npm install --production
 
 # Add application files after npm install
 # to prevent slow npm installs every time application changes.
-ADD main.js /app/
-ADD src /app/src/
+ADD . /app
 
-CMD ["node", "main.js"]
+CMD ["node", "./bin/www"]
