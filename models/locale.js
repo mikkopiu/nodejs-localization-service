@@ -4,13 +4,17 @@ module.exports = function (sequelize, DataTypes) {
     const Locale = sequelize.define(
         'Locale',
         {
-            locale: DataTypes.STRING,
+            id: {
+                allowNull: false,
+                primaryKey: true,
+                type: DataTypes.STRING
+            },
             fullName: DataTypes.STRING
         },
         {
             classMethods: {
                 associate: function (models) {
-                    Locale.hasMany(models.Localization);
+                    Locale.hasMany(models.Translation);
                 }
             }
         }

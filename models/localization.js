@@ -4,18 +4,16 @@ module.exports = function (sequelize, DataTypes) {
     const Localization = sequelize.define(
         'Localization',
         {
-            localizationId: DataTypes.STRING,
-            value: DataTypes.STRING
+            id: {
+                type: DataTypes.STRING,
+                primaryKey: true,
+                allowNull: false
+            }
         },
         {
             classMethods: {
                 associate: function (models) {
-                    Localization.belongsTo(models.Locale, {
-                        onDelete: 'CASCADE',
-                        foreignKey: {
-                            allowNull: false
-                        }
-                    });
+                    Localization.hasMany(models.Translation);
                 }
             }
         }

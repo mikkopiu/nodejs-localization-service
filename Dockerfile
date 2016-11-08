@@ -13,4 +13,5 @@ RUN npm install --production
 # to prevent slow npm installs every time application changes.
 ADD . /app
 
+EXPOSE 3000
 CMD ["node", "./bin/www"]

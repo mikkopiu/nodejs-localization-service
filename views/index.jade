@@ -6,7 +6,7 @@ block content
 
     h2 Create a new locale
     form(action="/locales/create", method="post")
-        input(type="text", name="locale")
+        input(type="text", name="id")
         input(type="text", name="fullName")
         input(type="submit")
 
@@ -16,21 +16,8 @@ block content
     each locale in locales
         li
             = locale.locale
+            = locale.fullName
             | &nbsp;
             | (
             a(href="/locales/" + locale.id + "/destroy") Destroy
             | )
-            ul
-                li
-                    | Create a new localization
-                    form(action="/locales/" + locale.id + "/localizations/create", method="post", style="display: inline")
-                        input(type="text", name="localizationId")
-                        input(type="text", name="value")
-                        input(type="submit")
-                each localization in locale.Localizations
-                    li
-                        = localization.localizationId
-                        | &nbsp;
-                        | (
-                        a(href="/locales/" + locale.id + "/localizations/" + localization.id + "/destroy") Destroy
-                        | )

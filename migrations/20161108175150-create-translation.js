@@ -2,14 +2,16 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('Locales', {
+        return queryInterface.createTable('Translations', {
             id: {
                 allowNull: false,
+                autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.STRING
+                type: Sequelize.INTEGER
             },
-            fullName: {
-                type: Sequelize.STRING
+            value: {
+                allowNull: false,
+                type: Sequelize.TEXT
             },
             createdAt: {
                 allowNull: false,
@@ -22,6 +24,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('Locales');
+        return queryInterface.dropTable('Translations');
     }
 };

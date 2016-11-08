@@ -5,15 +5,7 @@ module.exports = {
         return queryInterface.createTable('Localizations', {
             id: {
                 allowNull: false,
-                autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
-            },
-            localizationId: {
-                allowNull: false,
-                type: Sequelize.STRING
-            },
-            value: {
                 type: Sequelize.STRING
             },
             createdAt: {

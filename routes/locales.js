@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/create', (req, res) => {
     models.Locale.create({
-        locale: req.body.locale,
+        id: req.body.id,
         fullName: req.body.fullName
     }).then(() => res.redirect('/'));
 });
@@ -20,7 +20,7 @@ router.get('/:locale_id/destroy', (req, res) => {
 });
 
 router.post('/:locale_id/localizations/create', (req, res) => {
-    models.Localizations.create({
+    models.Localization.create({
         localizationId: req.body.localizationId,
         value: req.body.value,
         LocaleId: req.params.locale_id

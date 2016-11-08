@@ -1,14 +1,14 @@
 app:
   build: .
   ports:
-    - "9000:8080"
+    - "9000:3000"
   environment:
     - NODE_ENV=production
-    - PORT=8080
-    - REDIS_HOST=db
-    - REDIS_PORT=6379
+    - PORT=3000
   links:
     - "db:db"
 
 db:
-  image: redis
+  image: postgres
+  environment:
+    - POSTGRES_PASSWORD=superSecretP4ssw0rd
