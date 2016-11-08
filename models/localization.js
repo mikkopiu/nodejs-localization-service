@@ -10,7 +10,12 @@ module.exports = function (sequelize, DataTypes) {
         {
             classMethods: {
                 associate: function (models) {
-                    Localization.belongsTo(models.Locale);
+                    Localization.belongsTo(models.Locale, {
+                        onDelete: 'CASCADE',
+                        foreignKey: {
+                            allowNull: false
+                        }
+                    });
                 }
             }
         }
