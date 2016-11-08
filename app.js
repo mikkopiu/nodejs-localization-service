@@ -6,6 +6,7 @@ const helmet = require('helmet');
 
 const index = require('./routes/index');
 const locales = require('./routes/locales');
+const localizations = require('./routes/localizations');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/locales', locales);
+app.use('/localizations', localizations);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {

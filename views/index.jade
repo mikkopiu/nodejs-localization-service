@@ -6,18 +6,54 @@ block content
 
     h2 Create a new locale
     form(action="/locales/create", method="post")
-        input(type="text", name="id")
+        input(type="text", name="id", required)
         input(type="text", name="fullName")
         input(type="submit")
 
     h2 Locales
-
     ul
     each locale in locales
         li
-            = locale.locale
+            = locale.id
+            | &nbsp;
             = locale.fullName
             | &nbsp;
             | (
-            a(href="/locales/" + locale.id + "/destroy") Destroy
+            a(href="/locales/" + locale.id + "/destroy") Delete
             | )
+
+
+    h2 Create a new localization
+    form(action="/localizations/create", method="post")
+        input(type="text", name="id", required)
+        input(type="submit")
+
+    h2 Localizations
+    ul
+    each localization in localizations
+        li
+            = localization.id
+            | &nbsp;
+            | (
+            a(href="/localizations/" + localization.id + "/destroy") Delete
+            | )
+            ul
+                li
+                    if localization.usedLocales.length !== locales.length
+                        | Create a new translation:
+                        form(action="/localizations/" + localization.id + "/translations/create", method="post", style="display: inline")
+                            input(type="text", name="value", required)
+                            select(name="localeId", required)
+                                each locale in locales
+                                    if localization.usedLocales.indexOf(locale.id) === -1
+                                        option(value=locale.id) #{locale.fullName}
+                            input(type="submit")
+                    else
+                        | All locales have a value
+                each translation in localization.Translations
+                    li
+                        = translation.value
+                        | &nbsp;
+                        | (
+                        a(href="/localizations/" + localization.id + "/translations/" + translation.id + "/destroy") Delete
+                        | )
