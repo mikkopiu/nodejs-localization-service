@@ -1,5 +1,6 @@
 app:
   build: .
+  restart: unless-stopped
   ports:
     - "9000:3000"
   environment:
