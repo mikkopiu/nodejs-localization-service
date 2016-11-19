@@ -30,9 +30,13 @@ models.sequelize.sync()
         server.on('listening', onListening);
     })
     .catch(err => {
-        // Log it and re-throw to crash => wait for database by restarting app
+        // Log it and
+        // re-throw after 1s to crash
+        // => wait for database by restarting app
         debug(`Error: ${err}`);
-        throw err;
+        setTimeout(() => {
+            throw err;
+        }, 5000);
     });
 
 
