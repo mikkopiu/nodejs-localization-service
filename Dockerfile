@@ -1,7 +1,7 @@
-FROM alpine:3.4
+FROM alpine:3.5
 MAINTAINER Mikko Piuhola <mikko.piuhola@gmail.com>
 
-RUN apk update && apk add nodejs
+RUN apk add --no-cache nodejs
 
 WORKDIR /app
 ADD package.json ./
