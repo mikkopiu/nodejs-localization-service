@@ -21,23 +21,15 @@ It is recommended that you add a reverse proxy in front of the API.
 
 Available options (as environment variables):
 
-+-------------------+-------------+--------------------------------+
 | Variable          | Default     | Description                    |
-+-------------------+-------------+--------------------------------+
+|-------------------|-------------|--------------------------------|
 | `NODE_ENV`        | `undefined` |                                |
-+-------------------+-------------+--------------------------------+
 | `PORT`            | `3000`      | Port the app will listen on    |
-+-------------------+-------------+--------------------------------+
 | `APP_DB_NAME`     | `postgres`  | The name of the database       |
-+-------------------+-------------+--------------------------------+
 | `APP_DB_USER`     | `null`      | Username to access database    |
-+-------------------+-------------+--------------------------------+
 | `APP_DB_PASSWORD` | `null`      | Password to access database    |
-+-------------------+-------------+--------------------------------+
 | `APP_DB_HOST`     | `db`        | Hostname of database           |
-+-------------------+-------------+--------------------------------+
 | `APP_DB_DIALECT`  | `postgres`  | Sequelize dialect for database |
-+-------------------+-------------+--------------------------------+
 
 Database configuration is done using the `config/config.json` file.
 
