@@ -1,15 +1,29 @@
-app:
-  build: .
-  restart: unless-stopped
-  ports:
-    - "9000:3000"
-  environment:
+version: "3"
+
+services:
+  app:
+    build: .
+    image: mpiuhola/localization-service
+    # NOTE: It's preferable to not directly expose services
+    # but instead use a common proxy server-
+    ports:
+    - "3000:3000"
+    environment:
     - NODE_ENV=production
     - PORT=3000
-  links:
-    - "db:db"
-
-db:
-  image: postgres
-  environment:
+    depends_on:
+    - db
+  db:
+    image: postgres:9-alpine
+    # NOTE: Use an actual secrets management system for passwords,
+    # like Vault.
+    environment:
     - POSTGRES_PASSWORD=superSecretP4ssw0rd
+    # Optionally, mount the data to host
+    # in case your backup system relies on that.
+    volumes:
+    - data:/var/lib/postgresql/data
+
+# Named volume for Postgres
+volumes:
+  data:
